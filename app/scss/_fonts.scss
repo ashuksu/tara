@@ -1,0 +1,21 @@
+@font-face {
+   font-family: "Bebas";
+   font-weight: 400;
+   font-style: normal;
+   src: url("../fonts/Bebas.woff2") format("woff2"), url("../fonts/Bebas.woff") format("woff");
+}
+
+@font-face {
+   font-family: "Helvetica Neue";
+   font-weight: 400;
+   font-style: normal;
+   src: url("../fonts/HelveticaNeue.woff2") format("woff2"), url("../fonts/HelveticaNeue.woff") format("woff");
+}
+
+@font-face {
+   font-family: "Helvetica Neue-Light";
+   font-weight: 300;
+   font-style: normal;
+   src: url("../fonts/HelveticaNeue-Light.woff2") format("woff2"),
+      url("../fonts/HelveticaNeue-Light.woff") format("woff");
+}

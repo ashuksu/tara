@@ -1,0 +1,478 @@
+// @import "reset";
+// @import "normalize";
+@import "fonts";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: url(../images/bg-pattern.png);
+  background-repeat: repeat;
+}
+
+.container {
+  max-width: 960px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: inline-block;
+}
+
+button {
+  padding: 0;
+  width: 0;
+  border: none;
+}
+
+.title {
+  text-transform: uppercase;
+  font-family: "Bebas", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+// !------------------------- START HEADER -----------------------*/
+
+.header {
+  font-family: "Bebas", sans-serif;
+  text-transform: uppercase;
+  font-size: 0;
+  font-weight: 400;
+
+  &__inner {
+    height: 78px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-right: 5px;
+  }
+
+  &__menu {
+    & a {
+      display: inline-block;
+      color: #b9b9b9;
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    & li {
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+
+        & a {
+          padding-right: 0;
+        }
+      }
+    }
+
+    & a:hover {
+      transition: all 0.5s;
+      color: #ee5157;
+    }
+
+    &--active a {
+      color: #ee5157;
+    }
+  }
+}
+
+// !------------------------- END HEADER -----------------------
+
+// !------------------------- START SLIDER ----------------------
+
+.slider {
+  overflow-x: hidden;
+
+  &__inner {
+    margin-bottom: 17px;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      background-color: #f6a5a8;
+      position: absolute;
+      top: 0;
+      height: 60px;
+      width: 100vw;
+    }
+
+    &::before {
+      left: 100%;
+      margin-left: 10px;
+    }
+
+    &::after {
+      right: 100%;
+      margin-right: 10px;
+    }
+  }
+
+  &__item {
+    min-height: 400px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    outline: none;
+
+    &-preview {
+      margin-right: 20px;
+      margin-bottom: 42px;
+
+      /* :l ast-child {
+            // margin-right: 0px;
+         }*/
+    }
+
+    &-img {
+      height: 120px;
+      width: 140px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  //* -- -------------------------------------------------------------
+
+  .slick {
+    &-arrow {
+      border: none;
+      outline: transparent;
+      background-color: transparent;
+      position: absolute;
+      top: 167px;
+      z-index: 7;
+      cursor: pointer;
+
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+
+    &-next {
+      right: 38px;
+    }
+
+    &-prev {
+      left: 23px;
+    }
+  }
+
+  //* -- -----------------------------------------------------
+
+  &__info {
+    position: absolute;
+    width: 412px;
+    padding: 22px 20px;
+    bottom: 32px;
+    left: 36px;
+    background-color: rgba(238, 81, 87, 0.8);
+    color: #fff;
+    font-weight: 400;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 12px;
+    font-family: "Helvetica Neue", sans-serif;
+  }
+}
+
+// !------------------------- END SLIDER -----------------------
+
+// !------------------------- START FEATURES ------------------
+
+.features {
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex: 0 1 31.5%;
+    margin-bottom: 45px;
+    position: relative;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+
+  &__title {
+    color: #ee5157;
+    line-height: 24px;
+    position: relative;
+    margin-left: 70px;
+    margin-bottom: 45px;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -70px;
+      background-size: cover;
+    }
+
+    &--1::before {
+      background: url("../images/features/features-1.svg") no-repeat center;
+    }
+
+    &--2::before {
+      background: url("../images/features/features-2.svg") no-repeat center;
+    }
+
+    &--3::before {
+      background: url("../images/features/features-3.svg") no-repeat center;
+    }
+  }
+
+  &__text {
+    color: #414141;
+    font-size: 12px;
+    line-height: 18px;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    padding-bottom: 50px;
+  }
+
+  &__link {
+    height: 30px;
+    width: 55px;
+    padding: 0 10px;
+    background-color: #ee5157;
+    color: #fff;
+    font-weight: 400;
+    font-size: 12px;
+    font-family: "Bebas", sans-serif;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    &:hover {
+      transition: all 0.3s;
+      background-color: #f6a5a8;
+      color: #414141;
+    }
+  }
+}
+
+// !------------------------- END FEATURES -------------------
+
+// !------------------------- START PORTFOLIO ------------------
+
+.portfolio {
+  &__title {
+    color: #e8603c;
+    margin-bottom: 25px;
+    background: url(../images/bg-portf__tit-pattern.png) repeat;
+    box-shadow: inset 0 0 1px 1px #fff;
+
+    & span {
+      display: inline-block;
+      padding-right: 20px;
+      background: url(../images/bg-pattern.png) repeat;
+    }
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-right: -20px;
+    margin-bottom: 48px;
+    font-weight: 400;
+    font-family: "Bebas", sans-serif;
+  }
+
+  &__item {
+    flex: 0 1 220px;
+    margin-right: 20px;
+  }
+
+  &__img {
+    height: 183px;
+    width: 220px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  a.portfolio__link,
+  &__link img {
+    display: block;
+  }
+
+  &__inner {
+    padding: 15px 5px 13px 13px;
+    border: 1px solid #dbdbdb;
+    border-top: 0;
+    background-color: #fff;
+    font-family: "Bebas", sans-serif;
+    font-size: 16px;
+  }
+
+  &__label {
+    display: block;
+    color: #b9b9b9;
+    margin-bottom: 6px;
+  }
+
+  &__date {
+    display: block;
+    font-size: 11px;
+    color: #ee5157;
+  }
+}
+
+// !------------------------- END PORTFOLIO -------------------
+
+// !------------------------- START FOOTER ------------------
+
+.footer {
+  overflow-x: hidden;
+
+  &__inner {
+    background-color: #ee5157;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Helvetica Neue";
+    font-size: 12px;
+    padding: 35px 33px 30px;
+    position: relative;
+
+    &::after,
+    &::before {
+      content: "";
+      min-height: 100%;
+      width: 100vw;
+      background-color: #f6a5a8;
+      position: absolute;
+      top: 0;
+    }
+
+    &::before {
+      left: 100%;
+      margin-left: 10px;
+    }
+
+    &::after {
+      right: 100%;
+      margin-right: 10px;
+    }
+  }
+
+  &__item {
+    margin-right: 60px;
+    flex: 1 1 33.333%;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+
+  &__text p {
+    margin-bottom: 20px;
+  }
+
+  .blog {
+    &__text {
+      margin-bottom: 30px;
+    }
+
+    &__mess {
+      margin-bottom: 20px;
+    }
+
+    &_count {
+      margin-top: 7px;
+      color: #f3b29d;
+    }
+
+    &__link {
+      font-family: "Helvetica Neue-Light";
+      color: #f3b29d;
+      margin-right: 3px;
+    }
+  }
+
+  .contact {
+    &__text {
+      margin-bottom: 15px;
+    }
+
+    &__link {
+      margin-bottom: 20px;
+      font-size: 0;
+
+      & img {
+        display: block;
+        width: 30px;
+        height: 31px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      & a {
+        display: block;
+        color: #ffffff;
+        font-family: "Helvetica Neue";
+        font-size: 12px;
+        line-height: 15px;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+// !------------------------- END FOOTER -------------------
+// !------------------------- START MEDIA QUERIES ------------------
+
+@import "media";
